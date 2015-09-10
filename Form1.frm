@@ -110,7 +110,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 
-
 Private Sub cmdBrowse_Click()
     On Error GoTo cance1
     
@@ -139,6 +138,9 @@ Private Sub cmdBrowse_Click()
         
         If (Right$(fdir.List(i), 3) = ".in") Then
             Shell "cmd.exe /k " & Chr(34) & cd.FileName & Chr(34) & " < " & fdir.List(i) & " >  " & fdir.List(i) & ".cek & exit", vbHide
+            
+            DoEvents
+            Sleep 200
             Shell "cmd.exe /k fc.exe " & Chr(34) & LokasiF & fdir.List(i) & ".cek" & Chr(34) & " " & Chr(34) & LokasiF & Left$(fdir.List(i), Len(fdir.List(i)) - 3) & ".out" & Chr(34) & " > " & Chr(34) & LokasiF & fdir.List(i) & ".compare" & Chr(34) & " & exit", vbHide
             
             DoEvents
@@ -162,4 +164,3 @@ Private Sub cmdBrowse_Click()
     txtResult.Text = txtResult.Text & "--------------------------------------------" & vbCrLf
 cance1:
 End Sub
-
