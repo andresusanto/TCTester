@@ -10,5 +10,13 @@ Program ini sangat bermanfaat untuk melakukan banyak pengetesan dengan banyak te
 ## Program Terkompilasi
 Program yang sudah di-*compile* tersedia dalam arsip `build.rar`.
 
+## Step penggunaan
+1. Compile EXE
+2. Masukan semua file .in dan .out satu folder dengan exe yang sudah di-compile
+3. Klik browse
+4. Jika ada yang gagal, anda bisa lihat perbedaannya di file .in.compare hasil eksekusi. 
+
+**NOTE:** Program ini menghasilkan .in.cek (hasil pengecekan) dan .in.compare
+
 ## License
 MIT License
